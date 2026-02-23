@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Monitoreo Ecológico de Largo Plazo - Reserva Huaravito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #40916C 100%);
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(64, 145, 108, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(27, 67, 50, 0.1) 0%, transparent 50%);
+        }
+        
+        .section-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(27, 67, 50, 0.15);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #40916C;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #40916C;
+        }
+        
+        nav {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="smooth-scroll bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-green-700 to-green-900 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">H</span>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900 text-sm">Reserva Huaravito</div>
+                        <div class="text-xs text-gray-600">LTEMS</div>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-green-700 font-medium transition">Inicio</a>
+                    <a href="#que-es" class="text-gray-700 hover:text-green-700 font-medium transition">¿Qué es?</a>
+                    <a href="#bosque" class="text-gray-700 hover:text-green-700 font-medium transition">El Bosque</a>
+                    <a href="#fenomeno" class="text-gray-700 hover:text-green-700 font-medium transition">Fenómeno 10°C</a>
+                    <a href="#datos" class="text-gray-700 hover:text-green-700 font-medium transition">Datos</a>
+                    <a href="#participa" class="text-gray-700 hover:text-green-700 font-medium transition">Participa</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-bg hero-pattern min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white space-y-6">
+                    <div class="inline-block bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold">
+                        🌳 Monitoreo Científico desde 2021
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                        Centro de Monitoreo Ecológico de Largo Plazo
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-light opacity-90">
+                        Reserva Huaravito
+                    </h2>
+                    <p class="text-xl opacity-80 leading-relaxed">
+                        Un bosque premontano en Costa Rica que preserva la memoria térmica de hace 500 años. 
+                        Descubre cómo 72 árboles antiguos mantienen 10°C más fresco que su entorno.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#que-es" class="bg-white text-green-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg">
+                            Explorar
+                        </a>
+                        <a href="#participa" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition">
+                            Únete al Proyecto
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6 pt-4">
+                        <div>
+                            <div class="text-3xl font-bold">238</div>
+                            <div class="text-sm opacity-75">Observaciones</div>
+                        </div>
+                        <div class="h-12 w-px bg-white/30"></div>
+                        <div>
+                            <div class="text-3xl font-bold">116</div>
+                            <div class="text-sm opacity-75">Especies</div>
+                        </div>
+                        <div class="h-12 w-px bg-white/30"></div>
+                        <div>
+                            <div class="text-3xl font-bold">5</div>
+                            <div class="text-sm opacity-75">Años</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=800" 
+                             alt="Bosque premontano Costa Rica" 
+                             class="w-full h-[500px] object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+                            <p class="text-sm font-semibold">📍 Piedades Sur, San Ramón, Alajuela</p>
+                            <p class="text-xs opacity-75">1,250 m.s.n.m. | 10.1065°N, 84.5666°W</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué es LTEMS -->
+    <section id="que-es" class="py-20 bg-white section-fade">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">¿Qué es un LTEMS?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Long-Term Ecological Monitoring Site: Un sitio donde la ciencia observa la naturaleza durante años para entender cambios que no se ven en semanas o meses.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="stat-card bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl shadow-lg">
+                    <div class="text-5xl mb-4">🔬</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ciencia Rigurosa</h3>
+                    <p class="text-gray-700">
+                        Cada observación tiene fecha, GPS, foto y validación científica en iNaturalist.
+                    </p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Datos Abiertos</h3>
+                    <p class="text-gray-700">
+                        Toda la información está disponible públicamente para estudiantes, investigadores y ciudadanos.
+                    </p>
+                </div>
+
+                <div class="stat-card bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-xl shadow-lg">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Impacto Global</h3>
+                    <p class="text-gray-700">
+                        Nuestros datos contribuyen a redes internacionales de monitoreo climático y restauración.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">🎯 Objetivos de Desarrollo Sostenible (ODS)</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                        <div class="text-4xl mb-2">📚</div>
+                        <div class="font-bold text-green-700 mb-1">ODS 4</div>
+                        <div class="text-sm text-gray-600">Educación de Calidad</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                        <div class="text-4xl mb-2">🌡️</div>
+                        <div class="font-bold text-green-700 mb-1">ODS 13</div>
+                        <div class="text-sm text-gray-600">Acción por el Clima</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                        <div class="text-4xl mb-2">🌿</div>
+                        <div class="font-bold text-green-700 mb-1">ODS 15</div>
+                        <div class="text-sm text-gray-600">Vida de Ecosistemas</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow text-center">
+                        <div class="text-4xl mb-2">🤝</div>
+                        <div class="font-bold text-green-700 mb-1">ODS 17</div>
+                        <div class="text-sm text-gray-600">Alianzas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Bosque Toyopán -->
+    <section id="bosque" class="py-20 bg-gradient-to-br from-green-50 to-emerald-50 section-fade">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">El Bosque Sagrado Toyopán</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        En el corazón de la Reserva Huaravito vive el <strong>Bosque Toyopán</strong>, 
+                        un fragmento de bosque premontano que probablemente nunca fue deforestado. 
+                        Aquí crece el <em>Guayabón</em> (Hauya elegans), un árbol que hace siglos 
+                        dominaba el Valle Central de Costa Rica.
+                    </p>
+
+                    <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+                        <h3 class="font-bold text-xl text-green-800 mb-4">🌳 El Guayabón (Hauya elegans)</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span><strong>72 individuos</strong> documentados en iNaturalist</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Troncos con <strong>"raíces tablares"</strong> (patas de elefante)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span><strong>>70% de cobertura de epífitas</strong> (musgos, orquídeas, helechos)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Hoy es <strong>muy raro</strong> en el Valle Central</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
+                        <p class="text-sm text-amber-900">
+                            <strong>🔍 Dato curioso:</strong> El nombre "Supara" es un misterio. 
+                            No aparece en diccionarios Bribri ni Huetar. Es probablemente un nombre 
+                            vernáculo local preservado en la memoria oral de Piedades Sur.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800" 
+                             alt="Árbol con raíces tablares" 
+                             class="w-full h-64 object-cover">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400" 
+                             alt="Epífitas en tronco" 
+                             class="w-full h-40 object-cover rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1615485736962-f8f3f6c5c1b9?w=400" 
+                             alt="Orquídea epífita" 
+                             class="w-full h-40 object-cover rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">📅 Cronología del Proyecto</h3>
+                <div class="max-w-3xl mx-auto">
+                    <div class="relative border-l-4 border-green-600 pl-8 space-y-8">
+                        <div class="timeline-item relative">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="font-bold text-green-700 mb-1">2021</div>
+                                <div class="font-semibold text-gray-900">Baseline Florístico</div>
+                                <p class="text-gray-600 text-sm mt-2">26 especies documentadas. Primera medición del bosque.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="font-bold text-green-700 mb-1">2022–2025</div>
+                                <div class="font-semibold text-gray-900">Monitoreo Térmico Continuo</div>
+                                <p class="text-gray-600 text-sm mt-2">Sensor fijo a 1.5m registra 19.5°C ± 0.2°C durante 4 años.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <div class="font-bold text-green-700 mb-1">Febrero 2026</div>
+                                <div class="font-semibold text-gray-900">Descubrimiento del Gradiente de 10°C</div>
+                                <p class="text-gray-600 text-sm mt-2">Transecto revela 27.5°C en zona degradada vs. 17.3°C en núcleo del bosque.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item relative">
+                            <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-green-500">
+                                <div class="font-bold text-green-700 mb-1">2026 – Presente</div>
+                                <div class="font-semibold text-gray-900">Colaboración Internacional</div>
+                                <p class="text-gray-600 text-sm mt-2">Dataset enviado a SNAPP-MORE (Universidad de Minnesota). 238 observaciones, 116 especies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fenómeno 10°C -->
+    <section id="fenomeno" class="py-20 bg-white section-fade">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">🌡️ El Fenómeno de los 10 Grados</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    En solo 150 metros de distancia, la temperatura baja 10.2°C. 
+                    Esto es extraordinario: la mayoría de bosques tropicales enfrían 3-8°C.
+                </p>
+            </div>
+
+            <!-- Interactive Chart -->
+            <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 mb-12 shadow-xl">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Gradiente Térmico Espacial (20 Feb 2026)</h3>
+                <canvas id="thermalGradientChart" class="max-w-4xl mx-auto" height="100"></canvas>
+                <p class="text-center text-sm text-gray-600 mt-4">
+                    📏 Distancia: ~150 metros | ⏰ Hora: mediodía | ☁️ Condiciones: parcialmente nublado
+                </p>
+            </div>
+
+            <!-- Mechanisms -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-green-50 border-2 border-green-200 rounded-xl p-8">
+                    <div class="text-4xl mb-4">💧</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">1. Interceptación de Niebla</h3>
+                    <p class="text-gray-700">
+                        La mina abandonada al norte canaliza aire frío y niebla hacia el bosque. 
+                        Los Guayabones y sus epífitas atrapan el vapor de agua, liberando calor latente 
+                        y creando enfriamiento evaporativo.
+                    </p>
+                </div>
+
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-8">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">2. Biomasa Epifítica</h3>
+                    <p class="text-gray-700">
+                        Los musgos, orquídeas y helechos cubren >70% de los troncos. 
+                        Esta capa orgánica húmeda actúa como aislante térmico, 
+                        protegiendo contra fluctuaciones de temperatura.
+                    </p>
+                </div>
+
+                <div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-8">
+                    <div class="text-4xl mb-4">🌀</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">3. Circulación Convectiva</h3>
+                    <p class="text-gray-700">
+                        (Hipótesis) El aire denso y frío entra por el noreste y desplaza el aire caliente 
+                        hacia el oeste. El dosel alto funciona como "chimenea térmica", evacuando calor arriba 
+                        mientras el sotobosque se mantiene fresco.
+                    </p>
+                </div>
+
+                <div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-8">
+                    <div class="text-4xl mb-4">🍂</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">4. Manto Orgánico del Suelo</h3>
+                    <p class="text-gray-700">
+                        Capa de 20 cm de raíces, hojarasca y hongos. Retiene humedad por capilaridad, 
+                        alimentando enfriamiento evaporativo desde abajo. Además, suprime el pasto elefante 
+                        (solo 1% de cobertura).
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-gradient-to-r from-green-700 to-green-900 text-white rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">🧬 Hipótesis del Holobionte</h3>
+                <p class="text-lg max-w-3xl mx-auto opacity-90">
+                    El bosque no es solo árboles. Es un <strong>sistema integrado</strong> 
+                    (árboles + epífitas + hongos + suelo + fauna) que funciona como un organismo único. 
+                    Los 10.2°C no los produce un mecanismo, sino la <strong>sinergia de todos</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Datos Abiertos -->
+    <section id="datos" class="py-20 bg-gray-50 section-fade">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">📊 Datos Abiertos</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Toda nuestra información científica está disponible públicamente. 
+                    ¡Úsala para tus proyectos, tareas o investigaciones!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Biodiversity Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Crecimiento de Observaciones (2021-2026)</h3>
+                    <canvas id="biodiversityChart"></canvas>
+                </div>
+
+                <!-- Temperature Stats -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Estadísticas Térmicas</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center border-b pb-4">
+                            <span class="text-gray-700">Temperatura media anual (núcleo)</span>
+                            <span class="text-2xl font-bold text-green-700">19.5°C</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-4">
+                            <span class="text-gray-700">Varianza interanual (σ)</span>
+                            <span class="text-2xl font-bold text-blue-700">~0.2°C</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-4">
+                            <span class="text-gray-700">Enfriamiento vs. matriz</span>
+                            <span class="text-2xl font-bold text-purple-700">-3.7°C</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Gradiente máximo documentado</span>
+                            <span class="text-2xl font-bold text-red-700">10.2°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="https://www.inaturalist.org/projects/reserva-huaravito-sitio-natural-sagrado" 
+                   target="_blank"
+                   class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition text-center group">
+                    <div class="text-4xl mb-3">🔍</div>
+                    <h3 class="font-bold text-gray-900 mb-2 group-hover:text-green-700 transition">iNaturalist</h3>
+                    <p class="text-sm text-gray-600">238 observaciones con fotos y GPS</p>
+                </a>
+
+                <a href="https://terraware.io/species?organizationId=213" 
+                   target="_blank"
+                   class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition text-center group">
+                    <div class="text-4xl mb-3">🌳</div>
+                    <h3 class="font-bold text-gray-900 mb-2 group-hover:text-green-700 transition">Terraware</h3>
+                    <p class="text-sm text-gray-600">Inventario forestal completo</p>
+                </a>
+
+                <a href="https://restor.eco/es/sites/c4c9b69f-1f0b-40bc-9d80-2d18fd1e54cf" 
+                   target="_blank"
+                   class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition text-center group">
+                    <div class="text-4xl mb-3">🌍</div>
+                    <h3 class="font-bold text-gray-900 mb-2 group-hover:text-green-700 transition">Restor</h3>
+                    <p class="text-sm text-gray-600">Perfil del sitio en red global</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Participa -->
+    <section id="participa" class="py-20 bg-gradient-to-br from-green-600 to-green-800 text-white section-fade">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">🤝 Únete al Proyecto</h2>
+            <p class="text-xl opacity-90 max-w-3xl mx-auto mb-12">
+                Huaravito es ciencia abierta. Estudiantes, profesores, investigadores y ciudadanos 
+                curiosos: hay espacio para ti.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <div class="text-5xl mb-4">📸</div>
+                    <h3 class="text-xl font-bold mb-3">Ciencia Ciudadana</h3>
+                    <p class="opacity-90 mb-4">
+                        Descarga iNaturalist y sube fotos de plantas o animales que veas. 
+                        Cada observación cuenta.
+                    </p>
+                    <a href="https://www.inaturalist.org/projects/reserva-huaravito-sitio-natural-sagrado" 
+                       target="_blank"
+                       class="inline-block bg-white text-green-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Ir a iNaturalist
+                    </a>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold mb-3">Visitas Educativas</h3>
+                    <p class="opacity-90 mb-4">
+                        Grupos escolares y universitarios pueden coordinar visitas guiadas 
+                        al bosque para aprender sobre monitoreo ecológico.
+                    </p>
+                    <button class="inline-block bg-white text-green-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Solicitar Visita
+                    </button>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <div class="text-5xl mb-4">🔬</div>
+                    <h3 class="text-xl font-bold mb-3">Colaboración Científica</h3>
+                    <p class="opacity-90 mb-4">
+                        ¿Eres investigador o estudiante de posgrado? Tenemos datos, 
+                        hipótesis y preguntas esperando por ti.
+                    </p>
+                    <button class="inline-block bg-white text-green-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Contactar
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4">📧 Contacto</h3>
+                <p class="text-lg mb-4">
+                    <strong>Randall Santamaría Artavia</strong><br>
+                    Custodio-Director, Reserva Huaravito LTEMS<br>
+                    Piedades Sur, San Ramón, Alajuela, Costa Rica
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:huaravito@ltems.org" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        ✉️ Email
+                    </a>
+                    <a href="https://www.inaturalist.org/projects/reserva-huaravito-sitio-natural-sagrado" 
+                       target="_blank"
+                       class="bg-green-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition">
+                        🔗 iNaturalist
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Reserva Huaravito</h3>
+                    <p class="text-gray-400 text-sm">
+                        Centro de Monitoreo Ecológico de Largo Plazo (LTEMS)<br>
+                        Piedades Sur, San Ramón, Alajuela<br>
+                        Costa Rica
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#que-es" class="text-gray-400 hover:text-white transition">¿Qué es LTEMS?</a></li>
+                        <li><a href="#bosque" class="text-gray-400 hover:text-white transition">El Bosque</a></li>
+                        <li><a href="#datos" class="text-gray-400 hover:text-white transition">Datos Abiertos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl mb-4">Redes de Datos</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://www.inaturalist.org" target="_blank" class="text-gray-400 hover:text-white transition">iNaturalist</a></li>
+                        <li><a href="https://terraware.io" target="_blank" class="text-gray-400 hover:text-white transition">Terraware</a></li>
+                        <li><a href="https://restor.eco" target="_blank" class="text-gray-400 hover:text-white transition">Restor</a></li>
+                        <li><a href="https://ferm.fao.org" target="_blank" class="text-gray-400 hover:text-white transition">FERM (FAO)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                <p>© 2026 Reserva Huaravito LTEMS. Datos abiertos bajo licencia Creative Commons.</p>
+                <p class="mt-2">🌳 Contribuyendo a los ODS 4, 13, 15 y 17 de las Naciones Unidas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+
+        // Thermal Gradient Chart
+        const thermalCtx = document.getElementById('thermalGradientChart').getContext('2d');
+        new Chart(thermalCtx, {
+            type: 'line',
+            data: {
+                labels: ['Tajo (centro)', 'Perímetro', 'Entrada Este', 'Entrada Oeste', 'Guayabón maduro', 'Núcleo', 'El Santuario'],
+                datasets: [{
+                    label: 'Temperatura (°C)',
+                    data: [27.5, 26.4, 23.6, 23.5, 21.6, 20.0, 17.3],
+                    borderColor: 'rgb(220, 38, 38)',
+                    backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    pointBackgroundColor: function(context) {
+                        const value = context.parsed.y;
+                        if (value > 25) return 'rgb(220, 38, 38)';
+                        if (value > 22) return 'rgb(249, 115, 22)';
+                        if (value > 19) return 'rgb(34, 197, 94)';
+                        return 'rgb(59, 130, 246)';
+                    }
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + '°C';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 15,
+                        max: 30,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '°C';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Biodiversity Growth Chart
+        const bioCtx = document.getElementById('biodiversityChart').getContext('2d');
+        new Chart(bioCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2021', '2022', '2023', '2024', '2025', '2026'],
+                datasets: [{
+                    label: 'Total Observaciones',
+                    data: [15, 28, 42, 71, 82, 238],
+                    backgroundColor: 'rgba(34, 197, 94, 0.8)',
+                    borderColor: 'rgb(34, 197, 94)',
+                    borderWidth: 2
+                }, {
+                    label: 'Especies Únicas',
+                    data: [12, 22, 35, 58, 68, 116],
+                    backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                    borderColor: 'rgb(59, 130, 246)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
