@@ -1,0 +1,11 @@
+point_id,plot_x_m,plot_y_m,gps_lat,gps_lon,year,month,organic_layer_depth_cm,moisture_status,surface_condition,fungal_presence,notes
+SP01,3.0,3.0,10.10650,-84.56662,2026,2,22.3,Moderate,Dense litter; fine roots visible,High,White mycelium abundant
+SP02,9.0,6.0,10.10655,-84.56663,2026,2,19.8,Moderate,Decomposing leaves,Moderate,
+SP03,15.0,9.0,10.10660,-84.56664,2026,2,24.1,High,Very dense; fungal mat,Very High,Thick mycelial network
+SP04,21.0,12.0,10.10665,-84.56665,2026,2,21.5,Moderate,Mixed litter,High,
+SP05,27.0,15.0,10.10670,-84.56666,2026,2,18.9,Low,Drier zone; near edge,Moderate,Slight compaction detected
+SP06,6.0,18.0,10.10653,-84.56670,2026,2,23.7,High,Dense organic mat,Very High,Bryophyte layer present
+SP07,12.0,21.0,10.10658,-84.56671,2026,2,20.4,Moderate,Fine root density high,High,
+SP08,18.0,24.0,10.10663,-84.56673,2026,2,22.9,High,Moist; dark humus,Very High,Earthworm activity noted
+SP09,24.0,27.0,10.10668,-84.56675,2026,2,19.2,Moderate,Moderate litter,Moderate,
+SP10,15.0,15.0,10.10660,-84.56668,2026,2,25.4,High,Core zone; deepest measured,Very High,Maximum depth in plot

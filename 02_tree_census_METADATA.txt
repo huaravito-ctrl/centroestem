@@ -1,0 +1,213 @@
+================================================================================
+METADATA: Tree Census Dataset (Permanent Plot)
+================================================================================
+
+DATASET ID: 02_tree_census_2026
+VERSION: 1.0 (Baseline census)
+CENSUS DATE: February 2026
+CUSTODIAN: Randall Santamaría Artavia, Huaravito Reserve LTEMS
+
+--------------------------------------------------------------------------------
+PLOT INFORMATION
+--------------------------------------------------------------------------------
+Plot ID: LTEMS-P001
+Plot Size: 30 × 30 meters (900 m²)
+Plot Location: Western core sector (Toyopán Sacred Forest, The Shrine)
+Plot Corners GPS:
+  SW: 10.10648°N, 84.56661°W
+  SE: 10.10672°N, 84.56661°W
+  NW: 10.10648°N, 84.56677°W
+  NE: 10.10672°N, 84.56677°W
+Elevation: ~1,250 m.a.s.l.
+Slope: Gentle (< 5°)
+Aspect: West-facing
+
+Plot Establishment: February 2026
+Markers: Corner stakes with subsurface PVC pipes
+Permanence: Designated for long-term re-measurement (every 2 years)
+
+--------------------------------------------------------------------------------
+CENSUS PROTOCOL
+--------------------------------------------------------------------------------
+Inclusion Criteria: All woody stems ≥10 cm DBH
+DBH Measurement: Diameter tape at 1.3 m height
+Height Estimation: Visual estimation (no clinometer available)
+Tagging: Unique alphanumeric ID assigned to each tree
+Spatial Coordinates: Local plot coordinates (x, y in meters from SW corner)
+GPS: Individual tree GPS coordinates recorded
+
+Species Identification: Field identification with photographic voucher
+Validation: Cross-referenced with iNaturalist observations where possible
+
+--------------------------------------------------------------------------------
+DATA FIELDS
+--------------------------------------------------------------------------------
+
+1. tree_id
+   Description: Unique identifier for each tree
+   Format: Species code + sequential number (e.g., HE001 = Hauya elegans #1)
+   Notes: Permanent ID for re-measurement tracking
+
+2. species_scientific
+   Description: Scientific binomial name
+   Format: Genus species
+   Authority: Verified via iNaturalist community and botanical references
+   Example: Hauya elegans
+
+3. species_common
+   Description: Local common name(s)
+   Format: Text
+   Notes: Regional vernacular; may include indigenous names where known
+   Example: Guayabón, Aguacatillo
+
+4. family
+   Description: Taxonomic family
+   Format: Text
+   Example: Onagraceae, Lauraceae
+
+5. dbh_cm
+   Description: Diameter at breast height (1.3 m)
+   Format: Decimal
+   Units: Centimeters (cm)
+   Precision: ±0.5 cm (diameter tape measurement)
+   Method: Measured at 1.3 m height on uphill side if on slope
+
+6. height_m
+   Description: Total tree height
+   Format: Decimal
+   Units: Meters (m)
+   Method: Visual estimation
+   Precision: ±1 m (LIMITATION: no clinometer used)
+   Notes: Estimated from ground to highest live foliage
+
+7. health_status
+   Description: Overall tree condition assessment
+   Format: Text
+   Values: Healthy, Moderate, Poor, Dead
+   Criteria:
+     - Healthy: Full crown, minimal herbivory, no major structural damage
+     - Moderate: Partial defoliation, moderate herbivory, minor damage
+     - Poor: Severe defoliation, heavy herbivory, major structural damage
+     - Dead: Standing dead or recently fallen
+
+8. epiphyte_cover_pct
+   Description: Visual estimate of trunk surface covered by epiphytes
+   Format: Integer
+   Units: Percent (%)
+   Range: 0-100
+   Method: Visual estimation
+   Notes: Includes bryophytes, orchids, ferns, bromeliads
+
+9. plot_x_m
+   Description: X-coordinate within plot (east-west)
+   Format: Decimal
+   Units: Meters (m)
+   Origin: Southwest corner (0,0)
+   Range: 0-30
+
+10. plot_y_m
+    Description: Y-coordinate within plot (north-south)
+    Format: Decimal
+    Units: Meters (m)
+    Origin: Southwest corner (0,0)
+    Range: 0-30
+
+11. gps_lat
+    Description: GPS latitude
+    Format: Decimal degrees
+    Datum: WGS84
+    Precision: ±5 m (consumer GPS)
+
+12. gps_lon
+    Description: GPS longitude
+    Format: Decimal degrees
+    Datum: WGS84
+    Precision: ±5 m (consumer GPS)
+
+13. notes
+    Description: Qualitative observations
+    Format: Text
+    Examples: "Buttress roots", "IUCN Endangered", "Heavy orchid load"
+
+--------------------------------------------------------------------------------
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+Total Trees Censused: 25
+Total Species: 13
+Total Families: 10
+
+Hauya elegans (Guayabón):
+  Count: 15 individuals
+  Percentage: 60% of total stems
+  Density: 1,667 trees/ha (extrapolated)
+  Mean DBH: 64.7 cm
+  Size Range: 48.9 - 82.1 cm DBH
+
+All Species Combined:
+  Density: 2,778 trees/ha (extrapolated)
+  Mean DBH: 48.2 cm
+  Mean Height: 14.5 m
+  Mean Epiphyte Cover: 61%
+
+Conservation Status:
+  IUCN Endangered: 1 species (Persea schiedeana)
+  Regionally Rare: 1 species (Quetzalia occidentalis)
+
+--------------------------------------------------------------------------------
+LIMITATIONS
+--------------------------------------------------------------------------------
+1. Baseline census only (no temporal replication yet)
+2. Height estimated visually (no clinometer)
+3. Epiphyte cover visual estimate (no quantitative biomass measurement)
+4. GPS precision ±5 m (consumer-grade device)
+5. Small sample size (single 900 m² plot)
+6. No seedling or sapling (<10 cm DBH) census
+
+--------------------------------------------------------------------------------
+RE-MEASUREMENT SCHEDULE
+--------------------------------------------------------------------------------
+Next Census: February 2028 (2-year interval)
+Subsequent Census: February 2030
+Metrics to Track:
+  - DBH increment (growth rate)
+  - Mortality (dead trees)
+  - Recruitment (new individuals ≥10 cm DBH)
+  - Health status changes
+  - Epiphyte cover trends
+
+--------------------------------------------------------------------------------
+DATA QUALITY STATEMENT
+--------------------------------------------------------------------------------
+This baseline census provides a complete inventory of woody stems ≥10 cm DBH 
+within the permanent plot. While height estimation and epiphyte cover are 
+qualitative, DBH measurements are standardized and repeatable. The dataset 
+is suitable for:
+  - Density and basal area calculation
+  - Species composition analysis
+  - Baseline for long-term demographic monitoring
+
+Formal dendrometry (clinometer heights, precise basal area) recommended for 
+future censuses to improve quantitative rigor.
+
+--------------------------------------------------------------------------------
+RECOMMENDED CITATION
+--------------------------------------------------------------------------------
+Santamaría Artavia, R. (2026). Tree Census Dataset - Permanent Plot LTEMS-P001 
+(Baseline 2026), Huaravito Reserve Long-Term Ecological Monitoring Site, 
+Costa Rica. Huaravito Reserve LTEMS. Dataset version 1.0.
+
+--------------------------------------------------------------------------------
+CONTACT INFORMATION
+--------------------------------------------------------------------------------
+Randall Santamaría Artavia
+Custodian-Director, Huaravito Reserve LTEMS
+Piedades Sur, San Ramón, Alajuela, Costa Rica
+
+--------------------------------------------------------------------------------
+LICENSE
+--------------------------------------------------------------------------------
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+================================================================================
+END OF METADATA
+================================================================================

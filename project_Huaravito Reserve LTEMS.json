@@ -1,0 +1,520 @@
+{
+    "idProject": "pMgfRUsDap",
+    "name": "Huaravito Reserve LTEMS",
+    "lang": "en",
+    "description": "The Huaravito Reserve Long-Term Ecological Monitoring Site (LTEMS) is an independent ecological monitoring initiative established within the Reserva Huaravito, Costa Rica. The site encompasses approximately 4,500 m² of mature secondary forest, locally known as Bosque Sagrado Toyopán, characterized by a high structural density of Hauya elegans (Guayabón), with an estimated 75–100 mature individuals concentrated within the western core sector. This initiative integrates microclimatic monitoring, forest structural assessment, and long-term biodiversity documentation into a unified data framework operating under the governance principles of the Sentinel Protocol.",
+    "land_uses": [
+        {
+            "id": "f",
+            "name": "Forest land",
+            "tag": "Forest"
+        },
+        {
+            "id": "g",
+            "name": "Grassland",
+            "tag": "Grassland"
+        }
+    ],
+    "barriers": [],
+    "goals": [
+        {
+            "id": "f_finance",
+            "goal": "FOOD & PRODUCTS",
+            "subtheme": "Finances",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#96BC3D"
+        },
+        {
+            "id": "cl_resilience",
+            "goal": "CLIMATE",
+            "subtheme": "Resilience",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#4AA77B"
+        },
+        {
+            "id": "s_management",
+            "goal": "SOIL",
+            "subtheme": "Management",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#0292C3"
+        },
+        {
+            "id": "s_stability",
+            "goal": "SOIL",
+            "subtheme": "Stability",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#0292C3"
+        },
+        {
+            "id": "s_quality",
+            "goal": "SOIL",
+            "subtheme": "Quality",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#0292C3"
+        },
+        {
+            "id": "w_management",
+            "goal": "WATER",
+            "subtheme": "Management",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#026B9F"
+        },
+        {
+            "id": "e_management",
+            "goal": "ENERGY",
+            "subtheme": "Management",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#00427A"
+        },
+        {
+            "id": "b_protection",
+            "goal": "BIODIVERSITY",
+            "subtheme": "Protection",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#4B2F7E"
+        },
+        {
+            "id": "b_connectivity",
+            "goal": "BIODIVERSITY",
+            "subtheme": "Connectivity",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#4B2F7E"
+        },
+        {
+            "id": "cu_practices",
+            "goal": "CULTURE",
+            "subtheme": "Practices",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#941B82"
+        },
+        {
+            "id": "cu_values",
+            "goal": "CULTURE",
+            "subtheme": "Values",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#941B82"
+        },
+        {
+            "id": "co_income",
+            "goal": "COMMUNITY",
+            "subtheme": "Income",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#B54528"
+        },
+        {
+            "id": "co_equity",
+            "goal": "COMMUNITY",
+            "subtheme": "Equity",
+            "selected": true,
+            "color": "#94948B",
+            "selected_col": "#B54528"
+        }
+    ],
+    "index_value": 0,
+    "indicators": [
+        {
+            "id": 65,
+            "indicator": "Soil Compaction & Permeability",
+            "metric": "Bulk Density",
+            "action": "Maintain",
+            "action_id": 3,
+            "unit": "kg / m³",
+            "bottom_limit": 0,
+            "top_limit": 1000000000000,
+            "step": 0.1,
+            "rg_goal": "Soil",
+            "rg_goal_id": "s_stability",
+            "rg_subtheme": "Stability",
+            "bs_focus": "Biophysical",
+            "bs_focus_id": 1,
+            "bs_subtheme": "Stability",
+            "eg_focus": "Ecosystem Services/ Regulating",
+            "eg_focus_id": 4,
+            "eg_subtheme": "Stability",
+            "landuse": "Forest, Cropland, Grassland, Wetland",
+            "sgd_aichi_ldn": "SDG13, SDG15",
+            "selected": true,
+            "SDGs": [
+                "SDG13",
+                "SDG15"
+            ],
+            "constraints_ease": 2,
+            "constraints_affordability": 3,
+            "constraints_availablity": 3,
+            "constraints_quality": 3,
+            "constraints_comprehensiveness": 3,
+            "constraints_sensitivity": 3,
+            "constraints_average": 94,
+            "baseValue": "85",
+            "goalValue": "",
+            "optionsDropdown": [
+                {
+                    "label": "0 kg / m³",
+                    "value": 10
+                },
+                {
+                    "label": "17 kg / m³",
+                    "value": 8
+                },
+                {
+                    "label": "34 kg / m³",
+                    "value": 6
+                },
+                {
+                    "label": "51 kg / m³",
+                    "value": 4
+                },
+                {
+                    "label": "68 kg / m³",
+                    "value": 2
+                },
+                {
+                    "label": "No changes",
+                    "value": 0
+                }
+            ],
+            "selectedOptionDropdown": {
+                "label": "No changes",
+                "value": 0
+            }
+        },
+        {
+            "id": 107,
+            "indicator": "Connection Between Habitats",
+            "metric": "Genetic Diversity of Vegetation",
+            "action": "Increase",
+            "action_id": 1,
+            "unit": "%",
+            "bottom_limit": 0,
+            "top_limit": 100,
+            "step": 0.1,
+            "rg_goal": "Biodiversity",
+            "rg_goal_id": "b_connectivity",
+            "rg_subtheme": "Connectivity",
+            "bs_focus": "Biophysical",
+            "bs_focus_id": 1,
+            "bs_subtheme": "Connectivity",
+            "eg_focus": "Ecosystem Services/ Supporting",
+            "eg_focus_id": 5,
+            "eg_subtheme": "Connectivity",
+            "landuse": "Forest, Cropland, Grassland, Wetland, Settlement",
+            "sgd_aichi_ldn": "SDG15",
+            "selected": true,
+            "SDGs": [
+                "SDG15"
+            ],
+            "constraints_ease": 3,
+            "constraints_affordability": 3,
+            "constraints_availablity": 3,
+            "constraints_quality": 3,
+            "constraints_comprehensiveness": 2,
+            "constraints_sensitivity": 3,
+            "constraints_average": 94,
+            "baseValue": "65",
+            "goalValue": "75",
+            "optionsDropdown": [
+                {
+                    "label": "75 %",
+                    "value": 10
+                },
+                {
+                    "label": "73 %",
+                    "value": 8
+                },
+                {
+                    "label": "71 %",
+                    "value": 6
+                },
+                {
+                    "label": "69 %",
+                    "value": 4
+                },
+                {
+                    "label": "67 %",
+                    "value": 2
+                },
+                {
+                    "label": "No changes",
+                    "value": 0
+                }
+            ],
+            "selectedOptionDropdown": {
+                "label": "No changes",
+                "value": 0
+            }
+        },
+        {
+            "id": 67,
+            "indicator": "Soil Compaction & Permeability",
+            "metric": "Visual Observation and Classification",
+            "action": "Maintain",
+            "action_id": 3,
+            "unit": "Soil Color ",
+            "bottom_limit": 0,
+            "top_limit": 1000000000000,
+            "step": 0.1,
+            "rg_goal": "Soil",
+            "rg_goal_id": "s_stability",
+            "rg_subtheme": "Stability",
+            "bs_focus": "Biophysical",
+            "bs_focus_id": 1,
+            "bs_subtheme": "Stability",
+            "eg_focus": "Ecosystem Services/ Regulating",
+            "eg_focus_id": 4,
+            "eg_subtheme": "Stability",
+            "landuse": "Forest, Cropland, Grassland, Wetland",
+            "sgd_aichi_ldn": "SDG13, SDG15",
+            "selected": true,
+            "SDGs": [
+                "SDG13",
+                "SDG15"
+            ],
+            "constraints_ease": 2,
+            "constraints_affordability": 2,
+            "constraints_availablity": 2,
+            "constraints_quality": 3,
+            "constraints_comprehensiveness": 3,
+            "constraints_sensitivity": 3,
+            "constraints_average": 83,
+            "baseValue": "100",
+            "goalValue": "",
+            "optionsDropdown": [
+                {
+                    "label": "0 Soil Color ",
+                    "value": 10
+                },
+                {
+                    "label": "20 Soil Color ",
+                    "value": 8
+                },
+                {
+                    "label": "40 Soil Color ",
+                    "value": 6
+                },
+                {
+                    "label": "60 Soil Color ",
+                    "value": 4
+                },
+                {
+                    "label": "80 Soil Color ",
+                    "value": 2
+                },
+                {
+                    "label": "No changes",
+                    "value": 0
+                }
+            ],
+            "selectedOptionDropdown": {
+                "label": "No changes",
+                "value": 0
+            }
+        }
+    ],
+    "landuseIndicators": [
+        {
+            "id": 2,
+            "indicator": "SpeciesDiversity",
+            "name": "Vegetation Species Diversity",
+            "unit": "%",
+            "action": "Increase",
+            "action_id": 1,
+            "bottom_limit": 0,
+            "top_limit": 100,
+            "step": 0.1,
+            "goal": "landuse",
+            "theme": "Quality",
+            "landuse": "Generic",
+            "landuse_id": 0,
+            "tag": "Generic",
+            "other_entry_points": "SDG15, Aichi7",
+            "SDGs": [
+                "SDG15"
+            ],
+            "selected": true,
+            "constraints_ease": 3,
+            "constraints_affordability": 2,
+            "constraints_availablity": 3,
+            "constraints_quality": 3,
+            "constraints_comprehensiveness": 2,
+            "constraints_sensitivity": 3,
+            "constraints_average": 89,
+            "baseValue": "65",
+            "goalValue": "75",
+            "optionsDropdown": [
+                {
+                    "label": "75 %",
+                    "value": 10
+                },
+                {
+                    "label": "73 %",
+                    "value": 8
+                },
+                {
+                    "label": "71 %",
+                    "value": 6
+                },
+                {
+                    "label": "69 %",
+                    "value": 4
+                },
+                {
+                    "label": "67 %",
+                    "value": 2
+                },
+                {
+                    "label": "No changes",
+                    "value": 0
+                }
+            ],
+            "selectedOptionDropdown": {
+                "label": "No changes",
+                "value": 0
+            }
+        },
+        {
+            "id": 4,
+            "indicator": "VegetationCover",
+            "name": "Percentage of Tree Cover or Forest Cover",
+            "unit": "%",
+            "action": "Increase",
+            "action_id": 1,
+            "bottom_limit": 0,
+            "top_limit": 100,
+            "step": 0.1,
+            "goal": "landuse",
+            "theme": "Density",
+            "landuse": "Forest",
+            "landuse_id": 4,
+            "tag": "Forest",
+            "other_entry_points": "Aichi5",
+            "SDGs": [],
+            "selected": true,
+            "constraints_ease": 3,
+            "constraints_affordability": 2,
+            "constraints_availablity": 3,
+            "constraints_quality": 3,
+            "constraints_comprehensiveness": 2,
+            "constraints_sensitivity": 3,
+            "constraints_average": 89,
+            "baseValue": "75",
+            "goalValue": "90",
+            "optionsDropdown": [
+                {
+                    "label": "90 %",
+                    "value": 10
+                },
+                {
+                    "label": "87 %",
+                    "value": 8
+                },
+                {
+                    "label": "84 %",
+                    "value": 6
+                },
+                {
+                    "label": "81 %",
+                    "value": 4
+                },
+                {
+                    "label": "78 %",
+                    "value": 2
+                },
+                {
+                    "label": "No changes",
+                    "value": 0
+                }
+            ],
+            "selectedOptionDropdown": {
+                "label": "No changes",
+                "value": 0
+            }
+        }
+    ],
+    "barriersIndicators": [
+        {
+            "id": 1,
+            "goal": "Barriers to sustainability",
+            "subtheme": "Disturbance",
+            "barrier": "Unsustainable agriculture",
+            "indicator": "Unplanned disturbances within restored area",
+            "metric": "Area and type of disturbance",
+            "action": "Reduce",
+            "action_id": 2,
+            "unit": "ha",
+            "bottom_limit": 0,
+            "top_limit": 999999999999,
+            "step": 0.1,
+            "selected": true,
+            "constraints_ease": 3,
+            "constraints_affordability": 3,
+            "constraints_availablity": 2,
+            "constraints_quality": 2,
+            "constraints_comprehensiveness": 3,
+            "constraints_sensitivity": 3,
+            "constraints_average": 89,
+            "baseValue": "0.20",
+            "goalValue": "0.10",
+            "SDGs": [],
+            "optionsDropdown": [
+                {
+                    "label": "0.1 ha",
+                    "value": 10
+                },
+                {
+                    "label": "0.12 ha",
+                    "value": 8
+                },
+                {
+                    "label": "0.14 ha",
+                    "value": 6
+                },
+                {
+                    "label": "0.16 ha",
+                    "value": 4
+                },
+                {
+                    "label": "0.18 ha",
+                    "value": 2
+                },
+                {
+                    "label": "No changes",
+                    "value": 0
+                }
+            ],
+            "selectedOptionDropdown": {
+                "label": "No changes",
+                "value": 0
+            }
+        }
+    ],
+    "customIndicators": [],
+    "goalsImportance": [
+        {
+            "goal": "Soil",
+            "goal_id": "s_stability",
+            "importance": 4
+        },
+        {
+            "goal": "Biodiversity",
+            "goal_id": "b_connectivity",
+            "importance": 4
+        }
+    ],
+    "landuseImportance": 4,
+    "barriersImportance": 4,
+    "customImportance": 4,
+    "author": "Randall Santamaria Artavia (huaravitoreserve@gmail.com)",
+    "country": "Costa Rica"
+}

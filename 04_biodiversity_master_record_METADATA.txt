@@ -1,0 +1,246 @@
+================================================================================
+METADATA: Biodiversity Master Record (2021-2026)
+================================================================================
+
+DATASET ID: 04_biodiversity_master_record
+VERSION: 1.0
+TEMPORAL COVERAGE: May 2021 - February 2026 (5 years)
+CUSTODIAN: Randall Santamaría Artavia, Huaravito Reserve LTEMS
+
+--------------------------------------------------------------------------------
+OVERVIEW
+--------------------------------------------------------------------------------
+This dataset consolidates biodiversity observations from the Huaravito Reserve 
+documented via iNaturalist and cross-referenced with other monitoring platforms 
+(Terraware, Restor, NASA GLOBE Observer). It represents opportunistic field 
+observations rather than systematic census data.
+
+Primary Platform: iNaturalist Project "Reserva Huaravito / Sitio Natural Sagrado"
+URL: https://www.inaturalist.org/projects/reserva-huaravito-sitio-natural-sagrado
+
+As of February 2026:
+  Total Observations: 238
+  Unique Species: 116
+  Temporal Span: 2021-2026 (5 years)
+
+NOTE: This CSV contains a REPRESENTATIVE SAMPLE (25 observations) for 
+demonstration purposes. The full dataset of 238 observations is available 
+via the iNaturalist project page.
+
+--------------------------------------------------------------------------------
+OBSERVATION PROTOCOL
+--------------------------------------------------------------------------------
+Platform: iNaturalist (primary)
+Method: Opportunistic field observations with photographic documentation
+GPS Accuracy: ±5-10 m (smartphone GPS)
+Taxonomic Verification: Community-based identification via iNaturalist
+Quality Grade: Research Grade (when community consensus achieved)
+
+Cross-Platform Integration:
+  - Terraware: Forest inventory cross-reference (organizationId=213)
+  - Restor: Site profile integration
+  - NASA GLOBE Observer: Canopy cover and tree height validation
+
+--------------------------------------------------------------------------------
+DATA FIELDS
+--------------------------------------------------------------------------------
+
+1. obs_id
+   Description: Sequential observation number (within this sample dataset)
+   Format: Integer
+   Range: 1-25 (this sample); full dataset has 238 observations
+
+2. date
+   Description: Date of observation
+   Format: YYYY-MM-DD
+   Precision: Day
+   Example: 2021-05-09
+
+3. year
+   Description: Year of observation
+   Format: YYYY
+   Purpose: Facilitates annual summaries
+
+4. species_scientific
+   Description: Scientific binomial name
+   Format: Genus species
+   Authority: Verified via iNaturalist community
+   Notes: "sp." indicates genus-level identification only
+   Example: Hauya elegans
+
+5. species_common
+   Description: Local common name(s)
+   Format: Text
+   Language: Spanish (Costa Rican vernacular)
+   Example: Guayabón, Aguacatillo
+   Notes: "NA" indicates no common name documented
+
+6. family
+   Description: Taxonomic family
+   Format: Text
+   Example: Onagraceae, Lauraceae, Orchidaceae
+
+7. growth_form
+   Description: Plant growth habit
+   Format: Text
+   Values: Tree, Shrub, Epiphyte, Vine, Herb
+   Example: Tree
+
+8. successional_guild
+   Description: Ecological successional role
+   Format: Text
+   Values: Pioneer, Early-intermediate, Late-successional
+   Criteria:
+     - Pioneer: Light-demanding, fast-growing, short-lived
+     - Early-intermediate: Moderately shade-tolerant
+     - Late-successional: Shade-tolerant, slow-growing, long-lived
+   Source: Literature-based classification + field observation
+
+9. iucn_status
+   Description: IUCN Red List conservation status
+   Format: Text
+   Values: Endangered, Vulnerable, Near Threatened, Least Concern, Not Listed
+   Source: IUCN Red List (https://www.iucnredlist.org)
+   Example: Persea schiedeana = Endangered
+
+10. rarity
+    Description: Local rarity assessment
+    Format: Text
+    Values: Common, Uncommon
+    Criteria:
+      - Common: Frequently observed across multiple habitats
+      - Uncommon: Infrequent; limited distribution or specialized habitat
+    Notes: Based on field experience within Huaravito and regional knowledge
+
+11. inat_url
+    Description: Link to iNaturalist observation
+    Format: URL
+    Example: https://inaturalist.org/observations/1
+    Notes: Placeholder URLs in this sample; actual URLs in full dataset
+
+12. platform_validation
+    Description: Which platforms validated this observation
+    Format: Text
+    Values: iNaturalist, iNaturalist+Terraware, iNaturalist+Restor, etc.
+    Notes: Cross-platform presence increases data reliability
+
+--------------------------------------------------------------------------------
+SUMMARY STATISTICS (Full Dataset 2021-2026)
+--------------------------------------------------------------------------------
+Total Observations: 238
+Unique Species: 116
+Unique Families: 52
+
+Temporal Distribution:
+  2021: 15 observations (12 species)
+  2022: 28 observations (22 species)
+  2023: 42 observations (35 species)
+  2024: 71 observations (58 species)
+  2025: 82 observations (68 species)
+  2026 (Jan-Feb): 238 cumulative (116 species)
+
+Hauya elegans Representation:
+  Total Observations: 72 (30.3% of dataset)
+  Temporal Consistency: Present in all years
+
+Growth Form Distribution:
+  Trees: 68%
+  Shrubs: 18%
+  Epiphytes: 8%
+  Others: 6%
+
+Successional Guild Distribution:
+  Pioneer: 19%
+  Early-intermediate: 58%
+  Late-successional: 23%
+
+Conservation Status:
+  IUCN Endangered: 1 species (Persea schiedeana)
+  Uncommon/Rare: 54% of species
+
+--------------------------------------------------------------------------------
+ECOLOGICAL INTERPRETATION
+--------------------------------------------------------------------------------
+The increasing species richness over time (12 → 116 species) reflects:
+  1. Expanded spatial coverage of monitoring
+  2. Improved observer expertise in field identification
+  3. Phenological variation (different seasons capture different taxa)
+  4. Community engagement (additional observers contributing)
+
+The dominance of early-intermediate successional species (58%) with significant 
+representation of late-successional taxa (23%) indicates a transitional forest 
+with characteristics of mature structure despite small fragment size.
+
+The high representation of Hauya elegans (30.3%) is consistent with its 
+structural prominence in the western core sector, though this likely reflects 
+detectability bias (large, conspicuous trees) rather than absolute numerical 
+dominance.
+
+--------------------------------------------------------------------------------
+KEY FINDINGS
+--------------------------------------------------------------------------------
+1. Two epiphytic orchid species (Scaphyglottis spp.) documented, indicating 
+   primary forest microclimate conditions
+
+2. One IUCN Endangered species (Persea schiedeana) actively monitored
+
+3. Spontaneous recruitment of keystone species (Ficus sp., Annona sp.) beyond 
+   baseline 26-species inventory, confirming active zoochorous dispersal
+
+4. 86% of documented species are shade-tolerant or moderately shade-tolerant, 
+   consistent with closed-canopy forest
+
+--------------------------------------------------------------------------------
+LIMITATIONS
+--------------------------------------------------------------------------------
+1. Opportunistic sampling (not systematic census)
+2. Detectability bias toward large, conspicuous species
+3. Spatial bias toward accessible areas (paths, plot boundaries)
+4. Seasonal bias (more observations during dry season field visits)
+5. Taxonomic bias toward vascular plants (limited fungi, invertebrates)
+6. Observer bias (single primary observer; inter-observer variability unknown)
+
+--------------------------------------------------------------------------------
+DATA QUALITY STATEMENT
+--------------------------------------------------------------------------------
+All observations are georeferenced, timestamped, and photographically documented 
+via iNaturalist. Community-based taxonomic verification provides quality control. 
+The dataset is suitable for:
+  - Species richness trends
+  - Phenological monitoring
+  - Rare species tracking
+  - Multi-year biodiversity trajectory analysis
+
+The dataset is NOT suitable for:
+  - Abundance estimation
+  - Population density calculation
+  - Systematic species accumulation curves
+
+For quantitative abundance data, refer to Tree Census Dataset (02).
+
+--------------------------------------------------------------------------------
+RECOMMENDED CITATION
+--------------------------------------------------------------------------------
+Santamaría Artavia, R. (2026). Biodiversity Master Record (2021-2026), Huaravito 
+Reserve Long-Term Ecological Monitoring Site, Costa Rica. Huaravito Reserve LTEMS. 
+Dataset version 1.0. Accessed via iNaturalist Project "Reserva Huaravito / 
+Sitio Natural Sagrado".
+
+--------------------------------------------------------------------------------
+CONTACT INFORMATION
+--------------------------------------------------------------------------------
+Randall Santamaría Artavia
+Custodian-Director, Huaravito Reserve LTEMS
+Piedades Sur, San Ramón, Alajuela, Costa Rica
+
+--------------------------------------------------------------------------------
+LICENSE
+--------------------------------------------------------------------------------
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Individual iNaturalist observations retain their original licenses as specified 
+by observers. Most are CC BY or CC0.
+
+================================================================================
+END OF METADATA
+================================================================================

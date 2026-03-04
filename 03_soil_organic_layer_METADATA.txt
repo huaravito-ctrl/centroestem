@@ -1,0 +1,210 @@
+================================================================================
+METADATA: Soil Organic Layer Measurements
+================================================================================
+
+DATASET ID: 03_soil_organic_layer
+VERSION: 1.0 (Baseline year)
+MEASUREMENT DATE: February 2026
+CUSTODIAN: Randall Santamaría Artavia, Huaravito Reserve LTEMS
+
+--------------------------------------------------------------------------------
+SITE INFORMATION
+--------------------------------------------------------------------------------
+Site: Permanent Plot LTEMS-P001 (30 × 30 m)
+Location: Toyopán Sacred Forest Core, Reserva Huaravito
+Coordinates: 10.1065°N, 84.5666°W
+Elevation: ~1,250 m.a.s.l.
+Forest Type: Premontane humid forest
+
+--------------------------------------------------------------------------------
+MEASUREMENT PROTOCOL
+--------------------------------------------------------------------------------
+Sampling Design: 10 permanent points distributed across plot
+Marker Type: Subsurface metal washers (5 cm depth) + GPS coordinates
+Re-measurement Frequency: Annual (February, dry season)
+
+Measurement Method:
+  1. Locate marked point using GPS and plot coordinates
+  2. Insert graduated metal rod vertically until resistance (mineral soil)
+  3. Record depth from litter surface to mineral soil contact
+  4. Take 3 replicate measurements per point (within 20 cm radius)
+  5. Average the 3 replicates
+  6. Record qualitative observations (moisture, fungi, roots, disturbance)
+
+Instrument: Graduated metal rod (1 cm increments)
+Precision: ±0.5 cm
+
+--------------------------------------------------------------------------------
+DATA FIELDS
+--------------------------------------------------------------------------------
+
+1. point_id
+   Description: Unique identifier for each sampling point
+   Format: SP## (Soil Point + number)
+   Range: SP01 to SP10
+   Notes: Permanent markers for re-measurement
+
+2. plot_x_m
+   Description: X-coordinate within plot (east-west)
+   Format: Decimal
+   Units: Meters (m)
+   Origin: Southwest corner (0,0)
+
+3. plot_y_m
+   Description: Y-coordinate within plot (north-south)
+   Format: Decimal
+   Units: Meters (m)
+   Origin: Southwest corner (0,0)
+
+4. gps_lat
+   Description: GPS latitude
+   Format: Decimal degrees
+   Datum: WGS84
+   Precision: ±5 m
+
+5. gps_lon
+   Description: GPS longitude
+   Format: Decimal degrees
+   Datum: WGS84
+   Precision: ±5 m
+
+6. year
+   Description: Year of measurement
+   Format: YYYY
+   Example: 2026
+
+7. month
+   Description: Month of measurement
+   Format: 1-12
+   Notes: Standardized to February (dry season) for comparability
+
+8. organic_layer_depth_cm
+   Description: Depth of organic layer (litter + humus to mineral soil)
+   Format: Decimal
+   Units: Centimeters (cm)
+   Method: Average of 3 replicate rod insertions
+   Precision: ±0.5 cm
+   Range: 18.9 - 25.4 cm (this dataset)
+
+9. moisture_status
+   Description: Qualitative soil moisture assessment
+   Format: Text
+   Values: Low, Moderate, High
+   Criteria:
+     - Low: Dry to touch; litter crumbles easily
+     - Moderate: Slightly moist; some cohesion
+     - High: Visibly moist; dark color; cohesive
+
+10. surface_condition
+    Description: Qualitative description of litter/humus surface
+    Format: Text
+    Notes: Free-form observations (litter type, root visibility, etc.)
+
+11. fungal_presence
+    Description: Visual assessment of fungal activity
+    Format: Text
+    Values: Low, Moderate, High, Very High
+    Indicators: Mycelium visibility, fruiting bodies, decomposition activity
+
+12. notes
+    Description: Additional qualitative observations
+    Format: Text
+    Examples: "White mycelium abundant", "Earthworm activity noted"
+
+--------------------------------------------------------------------------------
+SUMMARY STATISTICS (2026 Baseline)
+--------------------------------------------------------------------------------
+Number of Points: 10
+Mean Organic Layer Depth: 21.8 cm
+Standard Deviation: 2.1 cm
+Minimum Depth: 18.9 cm (Point SP05, near plot edge)
+Maximum Depth: 25.4 cm (Point SP10, central core zone)
+Range: 6.5 cm
+
+Moisture Status Distribution:
+  Low: 1 point (10%)
+  Moderate: 5 points (50%)
+  High: 4 points (40%)
+
+Fungal Presence Distribution:
+  Moderate: 3 points (30%)
+  High: 4 points (40%)
+  Very High: 3 points (30%)
+
+--------------------------------------------------------------------------------
+ECOLOGICAL INTERPRETATION
+--------------------------------------------------------------------------------
+The observed mean depth of 21.8 cm (±2.1 cm SD) is characteristic of mature 
+tropical premontane forests with long-term litter accumulation and minimal 
+disturbance. The high fungal activity indicates active decomposition and 
+nutrient cycling.
+
+The spatial pattern shows:
+  - Deeper organic layers in central plot (core forest)
+  - Shallower layers near plot edges (edge effects)
+  - High moisture retention despite dry season sampling (February)
+
+This organic mat contributes to:
+  - Soil moisture retention (evaporative cooling mechanism)
+  - Thermal insulation (buffering against temperature fluctuations)
+  - Grass suppression (physical barrier + allelopathy)
+  - Carbon storage
+
+--------------------------------------------------------------------------------
+LIMITATIONS
+--------------------------------------------------------------------------------
+1. Single year baseline (no temporal trend data yet)
+2. Small sample size (10 points across 900 m²)
+3. Qualitative moisture/fungal assessments (no quantitative gravimetric analysis)
+4. No bulk density, carbon content, or nutrient analysis
+5. Seasonal bias (dry season only; wet season depths may differ)
+
+--------------------------------------------------------------------------------
+RE-MEASUREMENT SCHEDULE
+--------------------------------------------------------------------------------
+Annual re-measurement every February (dry season standardization)
+
+Metrics to Track Over Time:
+  - Organic layer depth trend (stable, increasing, decreasing)
+  - Spatial pattern changes
+  - Moisture status shifts (climate change indicator)
+  - Fungal activity trends
+
+Target: ≥5 years of data by 2031 for trend analysis
+
+--------------------------------------------------------------------------------
+DATA QUALITY STATEMENT
+--------------------------------------------------------------------------------
+This baseline dataset establishes the current state of organic layer depth 
+and surface conditions within the permanent plot. While qualitative assessments 
+(moisture, fungal presence) are subjective, the depth measurements are 
+standardized and repeatable. The dataset is suitable for:
+  - Baseline characterization
+  - Long-term trend monitoring
+  - Comparative analysis with other forest types
+
+Quantitative soil chemistry and bulk density analysis recommended for future 
+detailed carbon storage assessment.
+
+--------------------------------------------------------------------------------
+RECOMMENDED CITATION
+--------------------------------------------------------------------------------
+Santamaría Artavia, R. (2026). Soil Organic Layer Measurements - Permanent Plot 
+LTEMS-P001 (Baseline 2026), Huaravito Reserve Long-Term Ecological Monitoring 
+Site, Costa Rica. Huaravito Reserve LTEMS. Dataset version 1.0.
+
+--------------------------------------------------------------------------------
+CONTACT INFORMATION
+--------------------------------------------------------------------------------
+Randall Santamaría Artavia
+Custodian-Director, Huaravito Reserve LTEMS
+Piedades Sur, San Ramón, Alajuela, Costa Rica
+
+--------------------------------------------------------------------------------
+LICENSE
+--------------------------------------------------------------------------------
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+================================================================================
+END OF METADATA
+================================================================================

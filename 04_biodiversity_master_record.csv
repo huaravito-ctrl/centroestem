@@ -1,0 +1,26 @@
+obs_id,date,year,species_scientific,species_common,family,growth_form,successional_guild,iucn_status,rarity,inat_url,platform_validation
+1,2021-05-09,2021,Cuphea appendiculata,Cuphea,Lythraceae,Shrub,Pioneer,Not Listed,Common,https://inaturalist.org/observations/1,iNaturalist
+2,2021-09-15,2021,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/2,iNaturalist
+3,2021-11-22,2021,Vismia baccifera,NA,Hypericaceae,Tree,Pioneer,Not Listed,Common,https://inaturalist.org/observations/3,iNaturalist
+4,2022-03-08,2022,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/4,iNaturalist
+5,2022-03-26,2022,Furcraea cabuya,Cabuya,Asparagaceae,Shrub,Pioneer,Not Listed,Common,https://inaturalist.org/observations/5,iNaturalist
+6,2022-11-03,2022,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/6,iNaturalist
+7,2023-03-08,2023,Persea schiedeana,Aguacatillo (Yas),Lauraceae,Tree,Late-successional,Endangered,Uncommon,https://inaturalist.org/observations/7,iNaturalist+Terraware
+8,2023-05-12,2023,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/8,iNaturalist
+9,2023-08-19,2023,Quetzalia occidentalis,Quetzalia,Celastraceae,Shrub,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/9,iNaturalist
+10,2024-01-04,2024,Quetzalia occidentalis,Quetzalia,Celastraceae,Shrub,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/10,iNaturalist+Terraware
+11,2024-02-08,2024,Aphelandra dolichantha,NA,Acanthaceae,Shrub,Early-intermediate,Not Listed,Uncommon,https://inaturalist.org/observations/11,iNaturalist+Terraware
+12,2024-03-15,2024,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/12,iNaturalist
+13,2024-06-22,2024,Trichilia martiana,NA,Meliaceae,Tree,Early-intermediate,Not Listed,Common,https://inaturalist.org/observations/13,iNaturalist
+14,2024-09-28,2024,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/14,iNaturalist
+15,2025-01-17,2025,Myrcia splendens,NA,Myrtaceae,Tree,Early-intermediate,Not Listed,Uncommon,https://inaturalist.org/observations/15,iNaturalist
+16,2025-04-09,2025,Scaphyglottis micrantha,Orquídea,Orchidaceae,Epiphyte,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/16,iNaturalist
+17,2025-04-09,2025,Scaphyglottis crurigera,Orquídea,Orchidaceae,Epiphyte,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/17,iNaturalist
+18,2025-07-14,2025,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/18,iNaturalist
+19,2025-10-05,2025,Roupala montana,NA,Proteaceae,Tree,Late-successional,Not Listed,Common,https://inaturalist.org/observations/19,iNaturalist
+20,2026-02-05,2026,Psidium friedrichsthalianum,NA,Myrtaceae,Tree,Early-intermediate,Not Listed,Common,https://inaturalist.org/observations/20,iNaturalist
+21,2026-02-11,2026,Persea caerulea,Aguacatillo,Lauraceae,Tree,Late-successional,Not Listed,Common,https://inaturalist.org/observations/21,iNaturalist
+22,2026-02-17,2026,Ficus sp.,Higuito,Moraceae,Tree,Early-intermediate,Not Listed,Common,https://inaturalist.org/observations/22,iNaturalist
+23,2026-02-17,2026,Annona sp.,Guanábana de monte,Annonaceae,Tree,Early-intermediate,Not Listed,Common,https://inaturalist.org/observations/23,iNaturalist
+24,2026-02-17,2026,Conostegia xalapensis,Canto,Melastomataceae,Shrub,Pioneer,Not Listed,Common,https://inaturalist.org/observations/24,iNaturalist
+25,2026-02-17,2026,Hauya elegans,Guayabón,Onagraceae,Tree,Late-successional,Not Listed,Uncommon,https://inaturalist.org/observations/25,iNaturalist

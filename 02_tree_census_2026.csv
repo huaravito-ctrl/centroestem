@@ -1,0 +1,27 @@
+tree_id,species_scientific,species_common,family,dbh_cm,height_m,health_status,epiphyte_cover_pct,plot_x_m,plot_y_m,gps_lat,gps_lon,notes
+HE001,Hauya elegans,Guayabón,Onagraceae,78.5,22.0,Healthy,85,5.2,8.3,10.10652,-84.56663,Buttress roots; heavy orchid load
+HE002,Hauya elegans,Guayabón,Onagraceae,65.2,18.5,Healthy,75,8.7,12.1,10.10655,-84.56665,
+HE003,Hauya elegans,Guayabón,Onagraceae,82.1,24.0,Healthy,90,12.3,6.8,10.10658,-84.56662,Largest in plot; Scaphyglottis spp.
+HE004,Hauya elegans,Guayabón,Onagraceae,55.8,16.0,Healthy,70,15.9,15.2,10.10661,-84.56668,
+HE005,Hauya elegans,Guayabón,Onagraceae,70.3,20.5,Healthy,80,18.6,9.4,10.10663,-84.56664,
+HE006,Hauya elegans,Guayabón,Onagraceae,48.9,14.5,Healthy,65,22.1,18.7,10.10666,-84.56670,Younger individual
+HE007,Hauya elegans,Guayabón,Onagraceae,73.6,21.0,Healthy,80,25.4,11.3,10.10668,-84.56666,
+HE008,Hauya elegans,Guayabón,Onagraceae,61.4,17.5,Moderate,60,28.9,20.5,10.10671,-84.56672,Minor herbivory on lower leaves
+PS001,Persea schiedeana,Aguacatillo (Yas),Lauraceae,52.3,15.0,Healthy,55,3.8,16.9,10.10650,-84.56669,IUCN Endangered
+QO001,Quetzalia occidentalis,Quetzalia,Celastraceae,12.5,6.5,Healthy,40,6.2,22.4,10.10653,-84.56673,Rare species; understory
+TR001,Trichilia martiana,NA,Meliaceae,38.7,12.0,Healthy,50,10.1,19.8,10.10656,-84.56671,
+MS001,Myrcia splendens,NA,Myrtaceae,25.4,9.5,Healthy,45,14.5,25.3,10.10659,-84.56674,
+HE009,Hauya elegans,Guayabón,Onagraceae,58.2,16.8,Healthy,70,17.8,28.1,10.10662,-84.56676,
+PC001,Persea caerulea,Aguacatillo,Lauraceae,45.1,13.5,Healthy,50,21.3,24.7,10.10665,-84.56675,Large-seeded; mammal dispersed
+MF001,Myrciaria floribunda,NA,Myrtaceae,18.9,7.8,Healthy,35,24.6,27.9,10.10667,-84.56677,
+HE010,Hauya elegans,Guayabón,Onagraceae,66.8,19.2,Healthy,75,27.2,14.6,10.10670,-84.56667,
+VM001,Vismia baccifera,NA,Hypericaceae,22.1,8.5,Healthy,30,29.5,23.8,10.10672,-84.56674,Pioneer species
+HE011,Hauya elegans,Guayabón,Onagraceae,51.7,15.8,Healthy,65,2.9,26.3,10.10649,-84.56675,
+RM001,Roupala montana,NA,Proteaceae,34.6,11.2,Healthy,45,7.4,28.9,10.10654,-84.56677,
+HE012,Hauya elegans,Guayabón,Onagraceae,74.9,21.5,Healthy,85,11.8,3.7,10.10657,-84.56661,
+MC001,Myrsine coriacea,NA,Primulaceae,29.3,10.5,Healthy,40,16.2,7.1,10.10660,-84.56663,
+HE013,Hauya elegans,Guayabón,Onagraceae,62.5,18.0,Healthy,70,19.7,21.5,10.10664,-84.56672,
+SD001,Siphoneugena dussii,NA,Myrtaceae,16.8,6.9,Healthy,35,23.4,17.2,10.10666,-84.56670,
+HE014,Hauya elegans,Guayabón,Onagraceae,69.2,20.0,Healthy,80,26.8,10.8,10.10669,-84.56665,
+IA001,Inga acuminata,NA,Fabaceae,31.5,10.8,Healthy,40,1.5,19.4,10.10648,-84.56671,N-fixing legume
+HE015,Hauya elegans,Guayabón,Onagraceae,56.4,16.5,Healthy,65,9.3,15.7,10.10655,-84.56668,

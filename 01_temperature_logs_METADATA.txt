@@ -1,0 +1,147 @@
+================================================================================
+METADATA: Temperature Monitoring Dataset
+================================================================================
+
+DATASET ID: 01_temperature_logs
+VERSION: 1.0
+LAST UPDATED: 2026-02-26
+CUSTODIAN: Randall Santamaría Artavia, Huaravito Reserve LTEMS
+
+--------------------------------------------------------------------------------
+SITE INFORMATION
+--------------------------------------------------------------------------------
+Site Name: Toyopán Sacred Forest Core (The Shrine)
+Location: Reserva Huaravito, Piedades Sur, San Ramón, Alajuela, Costa Rica
+Coordinates: 10.1065°N, 84.5666°W
+Elevation: 1,250 m.a.s.l.
+Forest Type: Premontane humid forest (Holdridge)
+
+--------------------------------------------------------------------------------
+TEMPORAL COVERAGE
+--------------------------------------------------------------------------------
+Start Date: January 2022
+End Date: December 2025
+Duration: 48 months (4 years)
+Temporal Resolution: Monthly means
+
+--------------------------------------------------------------------------------
+MEASUREMENT PROTOCOL
+--------------------------------------------------------------------------------
+Sensor Type: Digital temperature sensor (specific model not documented)
+Sensor Height: 1.5 m above ground (standardized)
+Sensor Location: Fixed position within forest core sector (The Shrine)
+Measurement Frequency: Continuous (aggregated to monthly means)
+Calibration: Not formally documented (LIMITATION)
+
+Regional Reference: San Ramón area meteorological data (approx. 10 km distance)
+
+--------------------------------------------------------------------------------
+DATA FIELDS
+--------------------------------------------------------------------------------
+
+1. year
+   Description: Year of measurement
+   Format: YYYY (integer)
+   Units: N/A
+   Example: 2022
+
+2. month
+   Description: Month of measurement
+   Format: 1-12 (integer)
+   Units: N/A
+   Example: 1 (January)
+
+3. season
+   Description: Climatic season classification
+   Format: Text (Dry or Wet)
+   Values: 
+     - Dry: December, January, February, March, April
+     - Wet: May, June, July, August, September, October, November
+   Notes: Based on regional precipitation patterns
+
+4. forest_core_temp_C
+   Description: Mean monthly temperature at forest core sensor
+   Format: Decimal
+   Units: Degrees Celsius (°C)
+   Precision: ±0.1°C
+   Missing Data: None
+
+5. regional_ambient_temp_C
+   Description: Reference temperature from San Ramón area
+   Format: Decimal
+   Units: Degrees Celsius (°C)
+   Source: Regional meteorological station data
+   Notes: Approximate 10 km from site; serves as matrix baseline
+
+6. delta_T_C
+   Description: Temperature differential (biogenic cooling effect)
+   Formula: forest_core_temp_C - regional_ambient_temp_C
+   Format: Decimal
+   Units: Degrees Celsius (°C)
+   Interpretation: Negative values indicate forest is cooler than regional ambient
+
+7. notes
+   Description: Qualitative observations or special conditions
+   Format: Text
+   Examples: "El Niño influence", "Cooler wet season", "Baseline year initiation"
+
+--------------------------------------------------------------------------------
+KEY RESULTS
+--------------------------------------------------------------------------------
+Mean Annual Temperature (Forest Core): 19.5°C
+Interannual Standard Deviation (σ): ~0.2°C
+Mean Biogenic Cooling Effect (ΔT): -3.7°C
+Annual Thermal Amplitude: 2.1°C (18.8°C min to 20.9°C max)
+
+Dry Season Mean: 20.0°C
+Wet Season Mean: 19.3°C
+Seasonal Amplitude: 0.7°C
+
+--------------------------------------------------------------------------------
+LIMITATIONS
+--------------------------------------------------------------------------------
+1. Single sensor: No spatial replication within forest or multiple heights
+2. Calibration not formally documented
+3. Instrument precision unknown (estimated ±0.5°C based on typical consumer sensors)
+4. Regional reference station not co-located; introduces spatial variability
+5. No concurrent humidity, wind speed, or solar radiation measurements
+
+--------------------------------------------------------------------------------
+DATA QUALITY STATEMENT
+--------------------------------------------------------------------------------
+This dataset represents four years of continuous monitoring with consistent 
+methodology. While instrument-level precision is not formally characterized, 
+the temporal stability (σ ~0.2°C across years) suggests robust internal 
+consistency. The dataset is suitable for:
+  - Interannual trend analysis
+  - Seasonal decomposition
+  - Long-term monitoring baseline establishment
+
+The dataset requires spatial replication (distributed sensor network) to 
+validate horizontal and vertical temperature gradients.
+
+--------------------------------------------------------------------------------
+RECOMMENDED CITATION
+--------------------------------------------------------------------------------
+Santamaría Artavia, R. (2026). Temperature Monitoring Dataset (2022-2025), 
+Huaravito Reserve Long-Term Ecological Monitoring Site, Costa Rica. 
+Huaravito Reserve LTEMS. Dataset version 1.0.
+
+--------------------------------------------------------------------------------
+CONTACT INFORMATION
+--------------------------------------------------------------------------------
+Randall Santamaría Artavia
+Custodian-Director, Huaravito Reserve LTEMS
+Piedades Sur, San Ramón, Alajuela, Costa Rica
+Email: [contact information]
+
+--------------------------------------------------------------------------------
+LICENSE
+--------------------------------------------------------------------------------
+This dataset is released under Creative Commons Attribution 4.0 International 
+(CC BY 4.0). Users must credit the source and may use for any purpose including 
+commercial applications. Modifications and derivative works are permitted.
+
+================================================================================
+END OF METADATA
+================================================================================
