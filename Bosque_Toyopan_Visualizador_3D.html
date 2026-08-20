@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva Huaravito LTEMS - Visor 3D</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #0d1117;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    #hud {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      color: #e6edf3;
+      background: rgba(13, 17, 23, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 12px 16px;
+      border-radius: 8px;
+      pointer-events: none;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    #hud h1 { margin: 0 0 4px 0; font-size: 1rem; font-weight: 600; }
+    #hud p { margin: 0; font-size: 0.75rem; color: #8b949e; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+  <div id="hud">
+    <h1>Reserva Huaravito LTEMS</h1>
+    <p>Topografía 3D + Ortofoto Proyectada</p>
+  </div>
+
+  <script>
+    // 1. Pegar la cadena Base64 completa del archivo STL
+    const stlBase64 = "REEMPLAZAR_POR_TU_BASE64_AQUI";
+
+    function base64ToArrayBuffer(base64) {
+      const binaryString = window.atob(base64);
+      const len = binaryString.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      return bytes.buffer;
+    }
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0d1117);
+
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 2000);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    document.body.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    // Luces
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    dirLight.position.set(100, 100, 200);
+    scene.add(dirLight);
+
+    // Carga de textura con fallback (si no encuentra la foto, usa color verde boscoso)
+    const textureLoader = new THREE.TextureLoader();
+    const ortofoto = textureLoader.load(
+      'ortofoto_cenital.jpg',
+      undefined,
+      undefined,
+      function (err) {
+        console.warn('Imagen no encontrada. Mostrando malla con color base.');
+      }
+    );
+
+    try {
+      const loader = new THREE.STLLoader();
+      const buffer = base64ToArrayBuffer(stlBase64);
+      const geometry = loader.parse(buffer);
+
+      // Mapeo UV Planar
+      geometry.computeBoundingBox();
+      const bbox = geometry.boundingBox;
+      const sizeX = bbox.max.x - bbox.min.x;
+      const sizeY = bbox.max.y - bbox.min.y;
+
+      const pos = geometry.attributes.position;
+      const uvs = [];
+
+      for (let i = 0; i < pos.count; i++) {
+        const x = pos.getX(i);
+        const y = pos.getY(i);
+        const u = (x - bbox.min.x) / sizeX;
+        const v = (y - bbox.min.y) / sizeY;
+        uvs.push(u, v);
+      }
+
+      geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+      geometry.center();
+
+      const material = new THREE.MeshStandardMaterial({
+        map: ortofoto,
+        color: 0x2ea44f, // Color de respaldo si no carga la foto
+        roughness: 0.7,
+        metalness: 0.1
+      });
+
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      // Ajuste automático de cámara al tamaño real de la pieza
+      const maxDim = Math.max(sizeX, sizeY, bbox.max.z - bbox.min.z);
+      camera.position.set(0, -maxDim * 1.8, maxDim * 1.5);
+      camera.lookAt(0, 0, 0);
+      controls.target.set(0, 0, 0);
+
+    } catch (e) {
+      console.error('Error al procesar el STL:', e);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
